@@ -10,7 +10,7 @@ const addcustomer = (customer) => {
             console.log("Customer created");
             process.exit()
         })
-        .catch(err => { console.log(err); process.exit(); })
+        .catch(err => { console.log({ error: err.message }); process.exit(); })
 }
 
 //List all customers
@@ -22,7 +22,7 @@ const listcustomers = () => {
             console.log(`Total Customers: ${customers.length}`);
             process.exit();
         })
-        .catch(err => { console.log(err); process.exit(); })
+        .catch(err => { console.log({ error: err.message }); process.exit(); })
 }
 
 
@@ -33,10 +33,10 @@ const findcustomer = (name) => {
         .select("firstname lastname phone email")
         .then(customers => {
             console.log(customers);
-            console.log(`${customers.length} matches`);
+            console.log(`Total matches: ${customers.length}`);
             process.exit();
         })
-        .catch(err => { console.log(err); process.exit(); })
+        .catch(err => { console.log({ error: err.message }); process.exit(); })
 }
 
 //Update a customer
@@ -46,7 +46,7 @@ const updatecustomer = (_id, new_customer) => {
             console.log("Customer Updated");
             process.exit();
         })
-        .catch(err => { console.log(err); process.exit(); })
+        .catch(err => { console.log({ error: err.message }); process.exit(); })
 }
 
 
@@ -57,7 +57,7 @@ const removecustomer = (_id) => {
             console.log("Customer Removed");
             process.exit();
         })
-        .catch(err => { console.log(err); process.exit(); });
+        .catch(err => { console.log({ error: err.message }); process.exit(); });
 }
 
 module.exports = {

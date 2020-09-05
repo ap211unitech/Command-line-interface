@@ -1,5 +1,14 @@
+#!/usr/bin/env node
 const program = require("commander");
-const { addcustomer, findcustomer, updatecustomer, listcustomers, removecustomer } = require("../commands");
+
+const
+    { addcustomer,
+        findcustomer,
+        updatecustomer,
+        listcustomers,
+        removecustomer
+    } = require("../commands");
+
 const { prompt } = require("inquirer");
 
 //Questions for adding Customer

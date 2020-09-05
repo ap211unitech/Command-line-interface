@@ -1,8 +1,10 @@
 {
-  "name": "command_line-_interface",
+  "name": "customer-cli",
   "version": "1.0.0",
   "description": "Command line interface(CLI) with node.js",
-  "main": "commands.js",
+  "main": "./command/execute.js",
+  "preferGlobal": true,
+  "bin": "./command/execute.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
