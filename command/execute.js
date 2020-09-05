@@ -1,5 +1,5 @@
 const program = require("commander");
-const { addcustomer, findcustomer } = require("../commands");
+const { addcustomer, findcustomer, updatecustomer, listcustomers, removecustomer } = require("../commands");
 const { prompt } = require("inquirer");
 
 //Questions for adding Customer
@@ -52,14 +52,42 @@ program
         prompt(questions).then(answers => addcustomer(answers))
     })
 
+//List all customers
+program
+    .command("list")
+    .alias("l")
+    .description("List all customers")
+    .action(() => {
+        listcustomers();
+    })
 
 
+//Find a customer 
 program
     .command("find <name>")
     .alias('f')
     .description("Find a customer")
     .action(name => {
         findcustomer(name);
+    })
+
+
+//Update a customer
+program
+    .command("update <_id>")
+    .alias("u")
+    .description("Update a Customer Data")
+    .action((_id) => {
+        prompt(questions).then((answers) => updatecustomer(_id, answers));
+    })
+
+//Remove a Customer
+program
+    .command("remove <_id>")
+    .alias("r")
+    .description("Remove a Customer Data")
+    .action((_id) => {
+        removecustomer(_id)
     })
 
 
