@@ -1,0 +1,17 @@
+{
+  "name": "command_line-_interface",
+  "version": "1.0.0",
+  "description": "Command line interface(CLI) with node.js",
+  "main": "commands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arjun Porwal",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^6.1.0",
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3",
+    "mongoose": "^5.10.3"
+  }
+}
