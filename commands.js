@@ -1,4 +1,5 @@
-const connetion = require("./config/connection");
+const connection = require("./config/connection");
+const mongoose = require("mongoose");
 const data = require("./config/commands");
 
 
@@ -7,7 +8,7 @@ const addcustomer = (customer) => {
     data.create(customer)
         .then(() => {
             console.log("Customer created");
-            connetion.close();
+            process.exit()
         })
         .catch(err => {
             console.log(err)
@@ -16,12 +17,14 @@ const addcustomer = (customer) => {
 
 //Find a customer
 const findcustomer = (name) => {
-    let search = name.toLowerCase();
-    data.find({ $or: [{ firstnname: search, lastname: search }] })
+    let search = new RegExp(name, 'i');
+    data.find({ $or: [{ firstname: search }, { lastname: search }] })
+        .select("firstname lastname phone email -_id")
+
         .then(customers => {
             console.log(customers);
-            console.log(`${customers.length} matches`)
-            connetion.close();
+            console.log(`${customers.length} matches`);
+            process.exit();
         })
         .catch(err => {
             console.log(err);
