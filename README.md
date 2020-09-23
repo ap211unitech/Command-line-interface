@@ -6,7 +6,7 @@
 
 ## Want To try this ?
 
-### Clone this repo Using "git clone https://github.com/ap211unitech/Command-line-interface.git"
+#### Clone this repo Using "git clone https://github.com/ap211unitech/Command-line-interface.git"
 
 #### Navigate that folder then, use npm init
 
