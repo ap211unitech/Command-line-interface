@@ -10,6 +10,6 @@
 
 #### Navigate that folder then, use npm init
 
-#### Using Your DataBase you can Add Customer, Update Customers, Delete Customers etc.
+#### Using Your DataBase, you can Add Customer, Update Customers, Delete Customers etc.
 
 #### Use "customer-cli -h" for help.
