@@ -26,7 +26,7 @@ const listcustomers = () => {
 }
 
 
-//Find a customer
+//To find a customer
 const findcustomer = (name) => {
     let search = new RegExp(name, 'i');
     data.find({ $or: [{ firstname: search }, { lastname: search }] })
